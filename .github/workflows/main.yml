@@ -26,11 +26,11 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
     - run: |
-        docker build . -t michaelkovacina/sample:${{ github.sha }} -t michaelkovacina/sample:latest
+        docker build . -t michaelkovacina/sample2:${{ github.sha }} -t michaelkovacina/sample2:latest
         
     - run: |
-        docker push michaelkovacina/sample:${{ github.sha }}
+        docker push michaelkovacina/sample2:${{ github.sha }}
     
     - run: |
-        docker push michaelkovacina/sample:latest
+        docker push michaelkovacina/sample2:latest
 
