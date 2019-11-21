@@ -27,4 +27,6 @@ jobs:
     
     - run: |
         docker build . -t michaelkovacina/sample:${{ github.sha }}
+        
+    - run: |
         docker push michaelkovacina/sample:${{ github.sha }}
