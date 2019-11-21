@@ -26,5 +26,5 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
     - run: |
-        docker build . -t michaelkovacina/quotable-cs480:${{ github.sha }}
-        docker push michaelkovacina/quotable-cs480:${{ github.sha }}
+        docker build . -t michaelkovacina/sample:${{ github.sha }}
+        docker push michaelkovacina/sample:${{ github.sha }}
