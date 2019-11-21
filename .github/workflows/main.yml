@@ -19,3 +19,12 @@ jobs:
     - run: dotnet build
     - run: dotnet test 
     
+    - uses: azure/docker-login@v1
+      with:
+        #login-server: contoso.azurecr.io
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+    
+    - run: |
+        docker build . -t michaelkovacina/quotable-cs480:${{ github.sha }}
+        docker push michaelkovacina/quotable-cs480:${{ github.sha }}
